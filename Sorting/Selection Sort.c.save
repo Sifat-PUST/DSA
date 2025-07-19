@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int i,j,temp,size,min,cheak,k;
+    printf("Enter Array size :");
+    scanf("%i",&size);
+    int *x;
+    x=(int *) malloc(size *sizeof(int));
+    //int x[size];
+    for(i=0;i<size;i++)
+        scanf("%i",&x[i]);
+    // main loop
+    for(i=0;i<size;i++)
+    {
+       min=x[i];
+        for(j=i+1;j<size;j++)
+       {
+           if(min>=x[j])
+           {
+               min=x[j];
+                temp=j;
+                cheak=1;
+           }
+       }
+       if(cheak==1)
+       {
+        x[temp]=x[i];
+        x[i]=min;
+       }
+       cheak=0;
+        for(k=0;k<size;k++)
+        printf("%i ",x[k]);
+        printf("\n");
+
+    }
+   /* for(i=0;i<size;i++)
+    printf("%i ",x[i]);*/
+    //free(x);
+
+        return 0;
+}
